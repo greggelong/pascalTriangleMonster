@@ -33,7 +33,7 @@ function makeTriangle(n) {
 
 function setup() {
   createCanvas(800, 800);
-  
+  noStroke()
   background(0);  // don't need this
   makeTriangle(maxrow)
   console.log(pascal2)
