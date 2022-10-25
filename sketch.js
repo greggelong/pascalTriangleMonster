@@ -2,8 +2,9 @@
 // some comments are for a different version of 
 
 // get the height from the bitlen let H = 25; // 400 height divided by 8  400/8
-let W; // 1536 divided by 256
-let rr = 1
+let sz; // 1536 divided by 256
+let rr = 1 // pascal row not starting at zero
+let maxrow = 36
 let pascal2 = [
   [0, 0],
   [0, 1, 0]
@@ -34,7 +35,7 @@ function setup() {
   createCanvas(800, 800);
   
   background(0);  // don't need this
-  makeTriangle(22)
+  makeTriangle(maxrow)
   console.log(pascal2)
   textSize(15)
   mouseReleased();
@@ -43,10 +44,10 @@ function setup() {
 
 function mouseReleased(){
   background(0)
-  W=40
-  drawN(rr%20)
+  sz=20
+  drawN(rr%maxrow)
   fill(0,255,0)
-  text(rr%20+":: "+pascal2[rr%20], 10,770);
+  text(rr%maxrow+":: "+pascal2[rr%maxrow], 10,770);
   rr++
 }
 
@@ -54,8 +55,8 @@ function drawN(r){
   
   let x =0;
   for (let i = 0; i < pascal2[r].length; i++) {          // 
-    binSlice(x,pascal2[r][i], 16);
-    x+=W; // move the x pos by width set global W
+    binSlice(x,pascal2[r][i], 32); // make a 32bit number
+    x+=sz; // move the x pos by width set global W
   }
   
   
@@ -79,7 +80,7 @@ function binConvert(a, bitLen) {
 
 function binSlice(x, Dnum, bitLen) {
   // takes an x position, decimal number, and a bitLen of the largest number in the sequence
-  let H = 40 //Math.floor(height/bitLen); // need to floor this for collatz path sum which has a bit length of 17
+  
   // takes in a x location on canvas and a decimal number
   // calls the convert function
   let binA = binConvert(Dnum, bitLen);
@@ -88,12 +89,12 @@ function binSlice(x, Dnum, bitLen) {
   for (const element of binA) {
     if (element == 0) {
       fill(0);
-      rect(x, y, W,H);
+      rect(x, y, sz,sz);
     } else {
       fill(0, 255, 0);
-      rect(x, y, W, H);
+      rect(x, y, sz, sz);
     }
-    y += H;
+    y += sz;
   }
 }
 
