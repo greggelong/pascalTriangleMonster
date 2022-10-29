@@ -1,10 +1,11 @@
 # Pascal Triangle Monster : binaryPlot
 
-I am ploting the rows of Pascal triangle as 32 digit binary numbers as  from bottom to top, as cik. 
+Pascal Triangle monsters.
+I am plotting the rows of Pascal triangle as 32 digit binary numbers in column across the screen. The binary numbers are arranged from bottom to top. So a single square at the bottom indicates a 1, a single square one place above the bottom indicate a 2, and two squares one in the bottom and one directly above indicates a 3, and so on.
 
-a 1 in 
+The images it creates are symmetrical as the numbers in the triangle are. The central numbers get big pretty quickly. 
 
-This is also inspired by wolfram math visualizations 
+This is inspired by wolfram math visualizations.  
 
 just in time for Halloween
 
