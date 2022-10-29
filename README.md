@@ -1,6 +1,8 @@
 # Pascal Triangle Monster : binaryPlot
 
-This is an extension of binary plot.
+I am ploting the rows of Pascal triangle as 32 digit binary numbers as  from bottom to top, as cik. 
+
+a 1 in 
 
 This is also inspired by wolfram math visualizations 
 
